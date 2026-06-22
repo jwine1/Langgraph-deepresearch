@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: deepresearch-agent
+Version: 0.1.0
+Summary: 基于 LangGraph 的多阶段自动化深度研究智能体 —— 在 HelloAgents 深度研究助手基础上进行 LangGraph 工作流改造、Agent 工具调用优化和任务编排增强。
+Author: jwine1
+License: MIT
+Keywords: langgraph,agent,deep-research,llm,tool-calling,hello-agents
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.10
+Requires-Dist: openai>=1.0.0
+Requires-Dist: python-dotenv>=0.19.0
+Requires-Dist: fastapi>=0.100.0
+Requires-Dist: uvicorn[standard]>=0.20.0
+Requires-Dist: loguru>=0.7.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: langgraph>=0.2.0
+Requires-Dist: typing-extensions>=4.0.0
+Requires-Dist: hello-agents>=1.0.0
+Requires-Dist: duckduckgo-search>=6.0.0
+Requires-Dist: requests>=2.25.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.24.0; extra == "dev"
+Requires-Dist: httpx>=0.27.0; extra == "dev"

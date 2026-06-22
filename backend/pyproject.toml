@@ -1,0 +1,71 @@
+[project]
+name = "deepresearch-agent"
+version = "0.1.0"
+description = "基于 LangGraph 的多阶段自动化深度研究智能体 —— 在 HelloAgents 深度研究助手基础上进行 LangGraph 工作流改造、Agent 工具调用优化和任务编排增强。"
+# readme not yet included — blocked by setuptools path restriction
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "jwine1" }]
+keywords = [
+    "langgraph",
+    "agent",
+    "deep-research",
+    "llm",
+    "tool-calling",
+    "hello-agents",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "openai>=1.0.0",
+    "python-dotenv>=0.19.0",
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.20.0",
+    "loguru>=0.7.0",
+    "pydantic>=2.0.0",
+    "langgraph>=0.2.0",
+    "typing-extensions>=4.0.0",
+    "hello-agents>=1.0.0",
+    "duckduckgo-search>=6.0.0",
+    "requests>=2.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "httpx>=0.27.0",
+]
+
+# 运行方式（非 pip 入口，因为 import 基于 src/ 顶层）：
+#   cd backend && python src/main.py
+# 或：
+#   cd backend && uvicorn src.main:app --host 0.0.0.0 --port 8000
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
